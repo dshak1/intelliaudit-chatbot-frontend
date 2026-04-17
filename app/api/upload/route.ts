@@ -7,6 +7,7 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData()
     const res = await fetch(`${backend}/api/upload`, {
       method: "POST",
+      headers: { "ngrok-skip-browser-warning": "true" },
       body: formData,
     })
     const data = await res.json()
