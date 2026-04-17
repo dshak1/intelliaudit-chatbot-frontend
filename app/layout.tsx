@@ -1,15 +1,11 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
-
 export const metadata: Metadata = {
-  title: "IntelliAudit - ISO 27001 Compliance Platform",
-  description: "Automated ISO 27001 compliance assessment using AI agents and ChromaDB",
+  title: "IntelliAudit | Evidence-Backed ISO 27001 Review",
+  description: "Control-based compliance review with cited evidence, structured challenge, and human sign-off.",
   generator: "v0.app",
   icons: {
     icon: [
@@ -36,8 +32,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`font-sans antialiased`}>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body
+        className="antialiased [font-family:'Avenir_Next','SF_Pro_Display','Segoe_UI',sans-serif]"
+        suppressHydrationWarning
+      >
         {children}
         <Analytics />
       </body>
